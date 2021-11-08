@@ -42,9 +42,9 @@ public class FormularioFinal extends javax.swing.JDialog {
         jLTelefono = new javax.swing.JLabel();
         jTFTelefono = new javax.swing.JTextField();
         jLEdad = new javax.swing.JLabel();
-        jTFEdad = new javax.swing.JTextField();
+        jSpEdad = new javax.swing.JSpinner();
         jLSexo = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCBsexo = new javax.swing.JComboBox<>();
         jBInscribir = new javax.swing.JButton();
         jBLimpiar = new javax.swing.JButton();
         jVaciar = new javax.swing.JButton();
@@ -96,25 +96,37 @@ public class FormularioFinal extends javax.swing.JDialog {
         jPRegistrar.setBackground(new java.awt.Color(240, 240, 240));
         jPRegistrar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Registrar Alumnos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
+        jLNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLNombre.setText("Nombre: ");
 
         jTFNombre.setText("Nombre");
+        jTFNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFNombreActionPerformed(evt);
+            }
+        });
 
+        jLApellido.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLApellido.setText("Apellido:");
 
         jTFApellido.setText("Apellido");
 
+        jLTelefono.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLTelefono.setText("Telefono:");
 
         jTFTelefono.setText("Telefono");
 
+        jLEdad.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLEdad.setText("Edad:");
 
-        jTFEdad.setText("Edad");
+        jSpEdad.setName(""); // NOI18N
+        jSpEdad.setValue(18);
 
+        jLSexo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLSexo.setText("Sexo:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBsexo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jCBsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "F", "M" }));
 
         javax.swing.GroupLayout jPRegistrarLayout = new javax.swing.GroupLayout(jPRegistrar);
         jPRegistrar.setLayout(jPRegistrarLayout);
@@ -130,13 +142,13 @@ public class FormularioFinal extends javax.swing.JDialog {
                         .addComponent(jLNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTFNombre)
                     .addComponent(jTFApellido)
                     .addComponent(jTFTelefono)
-                    .addComponent(jTFEdad)
-                    .addComponent(jComboBox1, 0, 344, Short.MAX_VALUE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                    .addComponent(jSpEdad)
+                    .addComponent(jCBsexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         jPRegistrarLayout.setVerticalGroup(
             jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,37 +159,42 @@ public class FormularioFinal extends javax.swing.JDialog {
                     .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLApellido))
+                    .addComponent(jLApellido)
+                    .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLTelefono)
                     .addComponent(jTFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLEdad))
+                    .addComponent(jLEdad)
+                    .addComponent(jSpEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLSexo))
+                    .addComponent(jLSexo)
+                    .addComponent(jCBsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jBInscribir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBInscribir.setText("Inscribir Alumno");
 
+        jBLimpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar datos de Matriculación");
 
+        jVaciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jVaciar.setText("Vaciar Detalle de Inscripción");
 
         jPDetalleInscripcion.setBackground(new java.awt.Color(240, 240, 240));
         jPDetalleInscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Detalle de Inscipción", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         jCBAlumnosEnEnfermeria.setBackground(new java.awt.Color(240, 240, 240));
+        jCBAlumnosEnEnfermeria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jCBAlumnosEnEnfermeria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jCBAlumnosEnEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        jCBAlumnosEnEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         jCBAlumnosEnFisioterapia.setBackground(new java.awt.Color(240, 240, 240));
+        jCBAlumnosEnFisioterapia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jCBAlumnosEnFisioterapia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jCBAlumnosEnFisioterapia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Fisioterapia", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
@@ -218,10 +235,10 @@ public class FormularioFinal extends javax.swing.JDialog {
             jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPDetalleInscripcionLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPDetalleInscripcionLayout.createSequentialGroup()
+                .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPDetalleInscripcionLayout.createSequentialGroup()
                         .addComponent(jCBAlumnosEnEnfermeria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jCBAlumnosEnFisioterapia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jSPInformatica, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,6 +250,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jPCantidades.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Cantidad de Alumnos por Carrera:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
         jPCantidades.setForeground(new java.awt.Color(240, 240, 240));
 
+        jLCantEnEnfermeria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLCantEnEnfermeria.setText("Enfermeria:");
 
         jTFEnferFemeninos.setEditable(false);
@@ -250,6 +268,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jTFEnferMasculinos.setText("0");
         jTFEnferMasculinos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Masculino", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
+        jLCantEnNutricion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLCantEnNutricion.setText("Nutrición:");
 
         jTFNutriFemeninos.setEditable(false);
@@ -262,6 +281,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jTFNutriMasculinos.setText("0");
         jTFNutriMasculinos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Masculino", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
+        jLCantEnFisioterapia.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLCantEnFisioterapia.setText("Fisioterapia:");
 
         jTFFisioFemeninos.setEditable(false);
@@ -284,6 +304,7 @@ public class FormularioFinal extends javax.swing.JDialog {
             }
         });
 
+        jLCantEnInformatica.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLCantEnInformatica.setText("Informatica:");
 
         jTFInforFemeninos.setEditable(false);
@@ -380,6 +401,11 @@ public class FormularioFinal extends javax.swing.JDialog {
         );
 
         jSTotal.setBackground(new java.awt.Color(240, 240, 240));
+        jSTotal.setForeground(new java.awt.Color(100, 100, 100));
+        jSTotal.setMajorTickSpacing(10);
+        jSTotal.setMinorTickSpacing(2);
+        jSTotal.setPaintLabels(true);
+        jSTotal.setPaintTicks(true);
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
@@ -395,12 +421,12 @@ public class FormularioFinal extends javax.swing.JDialog {
                             .addComponent(jBInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(82, 82, 82)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(jBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(59, 59, 59)
                                 .addComponent(jVaciar, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(67, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -414,18 +440,18 @@ public class FormularioFinal extends javax.swing.JDialog {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBInscribir)
                     .addComponent(jBLimpiar)
                     .addComponent(jVaciar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(24, 24, 24)
                 .addComponent(jPCantidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jSTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -465,6 +491,10 @@ public class FormularioFinal extends javax.swing.JDialog {
     private void jTFInforMasculinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFInforMasculinosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFInforMasculinosActionPerformed
+
+    private void jTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,7 +544,7 @@ public class FormularioFinal extends javax.swing.JDialog {
     private javax.swing.JButton jBLimpiar;
     private javax.swing.JComboBox<String> jCBAlumnosEnEnfermeria;
     private javax.swing.JComboBox<String> jCBAlumnosEnFisioterapia;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jCBsexo;
     private javax.swing.JLabel jLApellido;
     private javax.swing.JLabel jLCantEnEnfermeria;
     private javax.swing.JLabel jLCantEnFisioterapia;
@@ -537,8 +567,8 @@ public class FormularioFinal extends javax.swing.JDialog {
     private javax.swing.JScrollPane jSPInformatica;
     private javax.swing.JScrollPane jSPNutricion;
     private javax.swing.JSlider jSTotal;
+    private javax.swing.JSpinner jSpEdad;
     private javax.swing.JTextField jTFApellido;
-    private javax.swing.JTextField jTFEdad;
     private javax.swing.JTextField jTFEnferFemeninos;
     private javax.swing.JTextField jTFEnferMasculinos;
     private javax.swing.JTextField jTFFisioFemeninos;
