@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Panel" min="-2" max="-2" attributes="0"/>
+          <Component id="Panel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -48,46 +48,40 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPDetalleInscripcion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jSTotal" max="32767" attributes="0"/>
+                      <Component id="jPCantidades" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPDetalleInscripcion" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jBInscribir" min="-2" pref="231" max="-2" attributes="0"/>
-                              <Component id="jPCarreras" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jPCarreras" pref="245" max="32767" attributes="0"/>
+                              <Component id="jBInscribir" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jBLimpiar" min="-2" pref="226" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Component id="jVaciar" min="-2" pref="237" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jPRegistrar" max="32767" attributes="0"/>
+                              <Component id="jPRegistrar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="67" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jSTotal" min="-2" pref="800" max="-2" attributes="0"/>
-                      <Component id="jPCantidades" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jPCarreras" min="-2" pref="210" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPRegistrar" max="32767" attributes="0"/>
                   </Group>
@@ -97,12 +91,12 @@
                       <Component id="jBLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jVaciar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
                   <Component id="jPDetalleInscripcion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jPCantidades" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jSTotal" min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="jSTotal" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -138,21 +132,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lic. en Enfermeria"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jRBEnfermeriaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRBNutricion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lic. en Nutrici&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jRBNutricionMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRBFisioterapia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lic. en Fisioterapia y Kinesiolog&#xed;a"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jRBFisioterapiaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRBInformatica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lic. en Inform&#xe1;tica"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jRBInformaticaMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -193,7 +199,7 @@
                           <Component id="jTFApellido" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTFTelefono" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSpEdad" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jCBsexo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jCBsexo" alignment="0" pref="373" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
@@ -242,10 +248,8 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTFNombre">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
-              </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTFNombreFocusGained"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFNombreActionPerformed"/>
               </Events>
             </Component>
@@ -258,9 +262,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTFApellido">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Apellido"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLTelefono">
               <Properties>
@@ -271,9 +272,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTFTelefono">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Telefono"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLEdad">
               <Properties>
@@ -368,7 +366,7 @@
                           <Component id="jCBAlumnosEnEnfermeria" min="-2" pref="264" max="-2" attributes="0"/>
                           <Component id="jCBAlumnosEnFisioterapia" min="-2" pref="264" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jSPNutricion" min="-2" pref="250" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="jSPInformatica" min="-2" pref="250" max="-2" attributes="0"/>
@@ -379,7 +377,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jCBAlumnosEnEnfermeria" min="-2" pref="35" max="-2" attributes="0"/>
@@ -538,7 +536,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Cantidad de Alumnos por Carrera:">
+                <TitledBorder justification="1" position="2" title="Cantidad de Alumnos por Carrera:">
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                     <EtchetBorder/>
                   </Border>
@@ -558,9 +556,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jLCantEnEnfermeria" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jLCantEnNutricion" alignment="1" max="32767" attributes="0"/>
                       </Group>
@@ -587,7 +585,7 @@
                               <Component id="jTFFisioFemeninos" min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTFFisioMasculinos" min="-2" pref="86" max="-2" attributes="0"/>
                           <Component id="jTFInforMasculinos" min="-2" pref="86" max="-2" attributes="0"/>
@@ -861,6 +859,16 @@
             <Property name="minorTickSpacing" type="int" value="2"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder justification="1" position="2" title="Total de alumnos Inscriptos">
+                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                  <Color PropertyName="color" blue="64" green="64" red="64" type="rgb"/>
+                </TitledBorder>
+              </Border>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>

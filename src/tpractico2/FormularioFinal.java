@@ -17,6 +17,23 @@ public class FormularioFinal extends javax.swing.JDialog {
     public FormularioFinal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        TextPrompt placeHolder= new TextPrompt("Nombre",jTFNombre);
+        TextPrompt placeHolder2= new TextPrompt("Apellido",jTFApellido);
+        TextPrompt placeHolder3= new TextPrompt("Telefono",jTFTelefono);
+        
+        jTFApellido.setEnabled(false);
+        jTFNombre.setEnabled(false);
+        jTFTelefono.setEnabled(false);
+        jSpEdad.setEnabled(false);
+        jCBsexo.setEnabled(false);
+        
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(false);
+          
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -82,15 +99,35 @@ public class FormularioFinal extends javax.swing.JDialog {
         jPCarreras.setLayout(new java.awt.GridLayout(4, 1));
 
         jRBEnfermeria.setText("Lic. en Enfermeria");
+        jRBEnfermeria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRBEnfermeriaMouseClicked(evt);
+            }
+        });
         jPCarreras.add(jRBEnfermeria);
 
         jRBNutricion.setText("Lic. en Nutrición");
+        jRBNutricion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRBNutricionMouseClicked(evt);
+            }
+        });
         jPCarreras.add(jRBNutricion);
 
         jRBFisioterapia.setText("Lic. en Fisioterapia y Kinesiología");
+        jRBFisioterapia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRBFisioterapiaMouseClicked(evt);
+            }
+        });
         jPCarreras.add(jRBFisioterapia);
 
         jRBInformatica.setText("Lic. en Informática");
+        jRBInformatica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRBInformaticaMouseClicked(evt);
+            }
+        });
         jPCarreras.add(jRBInformatica);
 
         jPRegistrar.setBackground(new java.awt.Color(240, 240, 240));
@@ -99,7 +136,11 @@ public class FormularioFinal extends javax.swing.JDialog {
         jLNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLNombre.setText("Nombre: ");
 
-        jTFNombre.setText("Nombre");
+        jTFNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTFNombreFocusGained(evt);
+            }
+        });
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -109,12 +150,8 @@ public class FormularioFinal extends javax.swing.JDialog {
         jLApellido.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLApellido.setText("Apellido:");
 
-        jTFApellido.setText("Apellido");
-
         jLTelefono.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLTelefono.setText("Telefono:");
-
-        jTFTelefono.setText("Telefono");
 
         jLEdad.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLEdad.setText("Edad:");
@@ -147,7 +184,7 @@ public class FormularioFinal extends javax.swing.JDialog {
                     .addComponent(jTFApellido)
                     .addComponent(jTFTelefono)
                     .addComponent(jSpEdad)
-                    .addComponent(jCBsexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jCBsexo, 0, 373, Short.MAX_VALUE))
                 .addGap(41, 41, 41))
         );
         jPRegistrarLayout.setVerticalGroup(
@@ -225,7 +262,7 @@ public class FormularioFinal extends javax.swing.JDialog {
                 .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jCBAlumnosEnEnfermeria, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBAlumnosEnFisioterapia, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSPNutricion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jSPInformatica, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,7 +271,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jPDetalleInscripcionLayout.setVerticalGroup(
             jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPDetalleInscripcionLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(29, 29, 29)
                 .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPDetalleInscripcionLayout.createSequentialGroup()
                         .addComponent(jCBAlumnosEnEnfermeria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +284,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         );
 
         jPCantidades.setBackground(new java.awt.Color(240, 240, 240));
-        jPCantidades.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Cantidad de Alumnos por Carrera:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        jPCantidades.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Cantidad de Alumnos por Carrera:", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
         jPCantidades.setForeground(new java.awt.Color(240, 240, 240));
 
         jLCantEnEnfermeria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -335,9 +372,9 @@ public class FormularioFinal extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPCantidadesLayout.createSequentialGroup()
-                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLCantEnEnfermeria)
-                        .addGap(0, 14, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLCantEnNutricion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +394,7 @@ public class FormularioFinal extends javax.swing.JDialog {
                         .addComponent(jLCantEnFisioterapia)
                         .addGap(49, 49, 49)
                         .addComponent(jTFFisioFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTFFisioMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTFInforMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -406,55 +443,52 @@ public class FormularioFinal extends javax.swing.JDialog {
         jSTotal.setMinorTickSpacing(2);
         jSTotal.setPaintLabels(true);
         jSTotal.setPaintTicks(true);
+        jSTotal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Total de alumnos Inscriptos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(97, 97, 97)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPCantidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(82, 82, 82)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                            .addComponent(jBInscribir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(65, 65, 65)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(jBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(59, 59, 59)
                                 .addComponent(jVaciar, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(67, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPCantidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(105, 105, 105))
+                            .addComponent(jPRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 7, Short.MAX_VALUE))
                     .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBInscribir)
                     .addComponent(jBLimpiar)
                     .addComponent(jVaciar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(35, 35, 35)
                 .addComponent(jPCantidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jSTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jSTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
 
@@ -462,7 +496,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,6 +529,73 @@ public class FormularioFinal extends javax.swing.JDialog {
     private void jTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNombreActionPerformed
+
+    private void jRBEnfermeriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBEnfermeriaMouseClicked
+        jRBEnfermeria.setSelected(true);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(false);
+        
+        jTFApellido.setEnabled(true);
+        jTFNombre.setEnabled(true);
+        jTFTelefono.setEnabled(true);
+        jSpEdad.setEnabled(true);
+        jCBsexo.setEnabled(true);
+        
+        jTFNombre.requestFocus();
+    }//GEN-LAST:event_jRBEnfermeriaMouseClicked
+
+    private void jRBNutricionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBNutricionMouseClicked
+        // TODO add your handling code here:
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(true);
+        
+        jTFApellido.setEnabled(true);
+        jTFNombre.setEnabled(true);
+        jTFTelefono.setEnabled(true);
+        jSpEdad.setEnabled(true);
+        jCBsexo.setEnabled(true);
+        
+        jTFNombre.requestFocus();
+    }//GEN-LAST:event_jRBNutricionMouseClicked
+
+    private void jRBFisioterapiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBFisioterapiaMouseClicked
+        // TODO add your handling code here:
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(true);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(false);
+        
+        jTFApellido.setEnabled(true);
+        jTFNombre.setEnabled(true);
+        jTFTelefono.setEnabled(true);
+        jSpEdad.setEnabled(true);
+        jCBsexo.setEnabled(true);
+        
+        jTFNombre.requestFocus();
+    }//GEN-LAST:event_jRBFisioterapiaMouseClicked
+
+    private void jRBInformaticaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBInformaticaMouseClicked
+        // TODO add your handling code here:
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(true);
+        jRBNutricion.setSelected(false);
+        
+        jTFApellido.setEnabled(true);
+        jTFNombre.setEnabled(true);
+        jTFTelefono.setEnabled(true);
+        jSpEdad.setEnabled(true);
+        jCBsexo.setEnabled(true);   
+        
+        jTFNombre.requestFocus();
+    }//GEN-LAST:event_jRBInformaticaMouseClicked
+
+    private void jTFNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTFNombreFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFNombreFocusGained
 
     /**
      * @param args the command line arguments
