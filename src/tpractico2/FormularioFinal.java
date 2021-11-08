@@ -28,18 +28,43 @@ public class FormularioFinal extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Panel = new javax.swing.JPanel();
         jPCarreras = new javax.swing.JPanel();
         jRBEnfermeria = new javax.swing.JRadioButton();
         jRBNutricion = new javax.swing.JRadioButton();
         jRBFisioterapia = new javax.swing.JRadioButton();
         jRBInformatica = new javax.swing.JRadioButton();
+        jPRegistrar = new javax.swing.JPanel();
+        jLNombre = new javax.swing.JLabel();
+        jTFNombre = new javax.swing.JTextField();
+        jLApellido = new javax.swing.JLabel();
+        jTFApellido = new javax.swing.JTextField();
+        jLTelefono = new javax.swing.JLabel();
+        jTFTelefono = new javax.swing.JTextField();
+        jLEdad = new javax.swing.JLabel();
+        jTFEdad = new javax.swing.JTextField();
+        jLSexo = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jPDetalleInscripcion = new javax.swing.JPanel();
+        jPCBEnfermeria = new javax.swing.JPanel();
+        jCBAlumnosEnEnfermeria = new javax.swing.JComboBox<>();
+        jPCBEnfermeria1 = new javax.swing.JPanel();
+        jCBAlumnosEnFisioterapia = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jBLimpiar = new javax.swing.JButton();
+        jVaciar = new javax.swing.JButton();
+        jBInscribir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(230, 230, 230));
 
-        jPCarreras.setBackground(new java.awt.Color(230, 230, 230));
-        jPCarreras.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)), "Carreras", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        Panel.setBackground(new java.awt.Color(240, 240, 240));
+
+        jPCarreras.setBackground(new java.awt.Color(240, 240, 240));
+        jPCarreras.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(210, 210, 210), 1, true), "Carreras", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
         jPCarreras.setForeground(new java.awt.Color(0, 0, 0));
         jPCarreras.setLayout(new java.awt.GridLayout(4, 1));
 
@@ -55,21 +80,218 @@ public class FormularioFinal extends javax.swing.JDialog {
         jRBInformatica.setText("Lic. en Informática");
         jPCarreras.add(jRBInformatica);
 
+        jPRegistrar.setBackground(new java.awt.Color(240, 240, 240));
+        jPRegistrar.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(210, 210, 210), 1, true), "Registrar Alumnos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+
+        jLNombre.setText("Nombre: ");
+
+        jTFNombre.setText("Nombre");
+
+        jLApellido.setText("Apellido:");
+
+        jTFApellido.setText("Apellido");
+
+        jLTelefono.setText("Telefono:");
+
+        jTFTelefono.setText("Telefono");
+
+        jLEdad.setText("Edad:");
+
+        jTFEdad.setText("Edad");
+
+        jLSexo.setText("Sexo:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPRegistrarLayout = new javax.swing.GroupLayout(jPRegistrar);
+        jPRegistrar.setLayout(jPRegistrarLayout);
+        jPRegistrarLayout.setHorizontalGroup(
+            jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPRegistrarLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTFNombre)
+                    .addComponent(jTFApellido)
+                    .addComponent(jTFTelefono)
+                    .addComponent(jTFEdad)
+                    .addComponent(jComboBox1, 0, 344, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        jPRegistrarLayout.setVerticalGroup(
+            jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPRegistrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLNombre)
+                    .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLApellido))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLTelefono)
+                    .addComponent(jTFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLEdad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLSexo))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        jPDetalleInscripcion.setBackground(new java.awt.Color(240, 240, 240));
+        jPDetalleInscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(210, 210, 210), 1, true), "Detalle de Inscipción", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+
+        jPCBEnfermeria.setBackground(new java.awt.Color(240, 240, 240));
+        jPCBEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+
+        jCBAlumnosEnEnfermeria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPCBEnfermeriaLayout = new javax.swing.GroupLayout(jPCBEnfermeria);
+        jPCBEnfermeria.setLayout(jPCBEnfermeriaLayout);
+        jPCBEnfermeriaLayout.setHorizontalGroup(
+            jPCBEnfermeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCBEnfermeriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCBAlumnosEnEnfermeria, 0, 297, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPCBEnfermeriaLayout.setVerticalGroup(
+            jPCBEnfermeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCBEnfermeriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCBAlumnosEnEnfermeria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPCBEnfermeria1.setBackground(new java.awt.Color(240, 240, 240));
+        jPCBEnfermeria1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Fisioterapia", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+
+        jCBAlumnosEnFisioterapia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPCBEnfermeria1Layout = new javax.swing.GroupLayout(jPCBEnfermeria1);
+        jPCBEnfermeria1.setLayout(jPCBEnfermeria1Layout);
+        jPCBEnfermeria1Layout.setHorizontalGroup(
+            jPCBEnfermeria1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCBEnfermeria1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCBAlumnosEnFisioterapia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPCBEnfermeria1Layout.setVerticalGroup(
+            jPCBEnfermeria1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPCBEnfermeria1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCBAlumnosEnFisioterapia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jList1.setBackground(new java.awt.Color(255, 255, 255));
+        jList1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Alumnos de Nutrición", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
+
+        jScrollPane1.setViewportView(jScrollPane2);
+
+        javax.swing.GroupLayout jPDetalleInscripcionLayout = new javax.swing.GroupLayout(jPDetalleInscripcion);
+        jPDetalleInscripcion.setLayout(jPDetalleInscripcionLayout);
+        jPDetalleInscripcionLayout.setHorizontalGroup(
+            jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPDetalleInscripcionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPCBEnfermeria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPCBEnfermeria1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
+        );
+        jPDetalleInscripcionLayout.setVerticalGroup(
+            jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPDetalleInscripcionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPDetalleInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPDetalleInscripcionLayout.createSequentialGroup()
+                        .addComponent(jPCBEnfermeria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(jPCBEnfermeria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
+        );
+
+        jBLimpiar.setText("Limpiar datos de Matriculación");
+
+        jVaciar.setText("Vaciar Detalle de Inscripción");
+
+        jBInscribir.setText("Inscribir Alumno");
+
+        javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
+        Panel.setLayout(PanelLayout);
+        PanelLayout.setHorizontalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBInscribir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(98, 98, 98)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addComponent(jBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jVaciar, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+        PanelLayout.setVerticalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBInscribir)
+                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jBLimpiar)
+                        .addComponent(jVaciar)))
+                .addGap(18, 18, 18)
+                .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(614, Short.MAX_VALUE))
+                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,10 +340,33 @@ public class FormularioFinal extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel;
+    private javax.swing.JButton jBInscribir;
+    private javax.swing.JButton jBLimpiar;
+    private javax.swing.JComboBox<String> jCBAlumnosEnEnfermeria;
+    private javax.swing.JComboBox<String> jCBAlumnosEnFisioterapia;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLApellido;
+    private javax.swing.JLabel jLEdad;
+    private javax.swing.JLabel jLNombre;
+    private javax.swing.JLabel jLSexo;
+    private javax.swing.JLabel jLTelefono;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPCBEnfermeria;
+    private javax.swing.JPanel jPCBEnfermeria1;
     private javax.swing.JPanel jPCarreras;
+    private javax.swing.JPanel jPDetalleInscripcion;
+    private javax.swing.JPanel jPRegistrar;
     private javax.swing.JRadioButton jRBEnfermeria;
     private javax.swing.JRadioButton jRBFisioterapia;
     private javax.swing.JRadioButton jRBInformatica;
     private javax.swing.JRadioButton jRBNutricion;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTFApellido;
+    private javax.swing.JTextField jTFEdad;
+    private javax.swing.JTextField jTFNombre;
+    private javax.swing.JTextField jTFTelefono;
+    private javax.swing.JButton jVaciar;
     // End of variables declaration//GEN-END:variables
 }
