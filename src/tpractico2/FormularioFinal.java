@@ -5,6 +5,7 @@
  */
 package tpractico2;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -234,30 +235,18 @@ public class FormularioFinal extends javax.swing.JDialog {
 
         jCBAlumnosEnEnfermeria.setBackground(new java.awt.Color(240, 240, 240));
         jCBAlumnosEnEnfermeria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jCBAlumnosEnEnfermeria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jCBAlumnosEnEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         jCBAlumnosEnFisioterapia.setBackground(new java.awt.Color(240, 240, 240));
         jCBAlumnosEnFisioterapia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jCBAlumnosEnFisioterapia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jCBAlumnosEnFisioterapia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Fisioterapia", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         jLiNutricion.setBackground(new java.awt.Color(255, 255, 255));
         jLiNutricion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Alumnos de Nutrición", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
-        jLiNutricion.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jSPNutricion.setViewportView(jLiNutricion);
 
         jLiInformatica.setBackground(new java.awt.Color(255, 255, 255));
         jLiInformatica.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Alumnos de Informatica", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
-        jLiInformatica.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jSPInformatica.setViewportView(jLiInformatica);
 
         javax.swing.GroupLayout jPDetalleInscripcionLayout = new javax.swing.GroupLayout(jPDetalleInscripcion);
@@ -376,17 +365,16 @@ public class FormularioFinal extends javax.swing.JDialog {
         jPCantidadesLayout.setHorizontalGroup(
             jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPCantidadesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPCantidadesLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLCantEnEnfermeria)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLCantEnNutricion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLCantEnNutricion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFNutriFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFEnferFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFEnferFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFNutriFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTFEnferMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,20 +415,17 @@ public class FormularioFinal extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCantidadesLayout.createSequentialGroup()
-                        .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFNutriFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFNutriMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCantidadesLayout.createSequentialGroup()
-                        .addComponent(jLCantEnNutricion)
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCantidadesLayout.createSequentialGroup()
                         .addComponent(jLCantEnInformatica)
                         .addGap(35, 35, 35))
                     .addGroup(jPCantidadesLayout.createSequentialGroup()
-                        .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFInforFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFInforMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTFInforFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFInforMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLCantEnNutricion)
+                            .addGroup(jPCantidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTFNutriFemeninos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFNutriMasculinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
 
@@ -547,6 +532,12 @@ public class FormularioFinal extends javax.swing.JDialog {
     }//GEN-LAST:event_jTFNombreActionPerformed
 
     private void jRBEnfermeriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBEnfermeriaMouseClicked
+       // TODO add your handling code here:
+        enfermeria=true;
+        nutricion=false;
+        fisioTerapia=false;
+        informatica=false;
+        
         jRBEnfermeria.setSelected(true);
         jRBFisioterapia.setSelected(false);
         jRBInformatica.setSelected(false);
@@ -563,6 +554,11 @@ public class FormularioFinal extends javax.swing.JDialog {
 
     private void jRBNutricionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBNutricionMouseClicked
         // TODO add your handling code here:
+        enfermeria=false;
+        nutricion=true;
+        fisioTerapia=false;
+        informatica=false;
+        
         jRBEnfermeria.setSelected(false);
         jRBFisioterapia.setSelected(false);
         jRBInformatica.setSelected(false);
@@ -579,6 +575,11 @@ public class FormularioFinal extends javax.swing.JDialog {
 
     private void jRBFisioterapiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBFisioterapiaMouseClicked
         // TODO add your handling code here:
+        enfermeria=false;
+        nutricion=false;
+        fisioTerapia=true;
+        informatica=false;
+        
         jRBEnfermeria.setSelected(false);
         jRBFisioterapia.setSelected(true);
         jRBInformatica.setSelected(false);
@@ -595,6 +596,11 @@ public class FormularioFinal extends javax.swing.JDialog {
 
     private void jRBInformaticaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBInformaticaMouseClicked
         // TODO add your handling code here:
+        enfermeria=false;
+        nutricion=false;
+        fisioTerapia=false;
+        informatica=true;
+        
         jRBEnfermeria.setSelected(false);
         jRBFisioterapia.setSelected(false);
         jRBInformatica.setSelected(true);
@@ -698,8 +704,82 @@ public class FormularioFinal extends javax.swing.JDialog {
             jRBFisioterapia.setSelected(false);
             jRBInformatica.setSelected(false);
             jRBNutricion.setSelected(false);
-        }else{
-            aux=nombre+" "+apellido+telefono+" "+edad+" "+sexo;
+        }else{ 
+            aux=nombre+" "+apellido+" "+telefono+" "+edad+" "+sexo;
+            
+            if(enfermeria){
+                jCBAlumnosEnEnfermeria.addItem(aux);
+                
+                if(sexo.equals("F")){
+                    AlumEnF++;
+                    AlumTotales++;
+                    jTFEnferFemeninos.setText(String.valueOf(AlumEnF));
+                }else{
+                    AlumEnM++;
+                    AlumTotales++;
+                    jTFEnferMasculinos.setText(String.valueOf(AlumEnM));
+                }
+  
+            }else if(fisioTerapia){
+                jCBAlumnosEnFisioterapia.addItem(aux);
+                
+                if(sexo.equals("F")){
+                    AlumFiF++;
+                    AlumTotales++;
+                    jTFFisioFemeninos.setText(String.valueOf(AlumFiF));
+                }else{
+                    AlumFiM++;
+                    AlumTotales++;
+                    jTFFisioMasculinos.setText(String.valueOf(AlumFiM));
+                }
+                
+            }else if(nutricion){
+                modelo.addElement(aux);
+                jLiNutricion.setModel(modelo);
+                
+                if(sexo.equals("F")){
+                    AlumNuF++;
+                    AlumTotales++;
+                    jTFNutriFemeninos.setText(String.valueOf(AlumNuF));
+                }else{
+                    AlumNuM++;
+                    AlumTotales++;
+                    jTFNutriMasculinos.setText(String.valueOf(AlumNuM));
+                }
+                
+            }else if(informatica){
+                modelo2.addElement(aux);
+                jLiInformatica.setModel(modelo2);
+                
+                if(sexo.equals("F")){
+                    AlumInF++;
+                    AlumTotales++;
+                    jTFInforFemeninos.setText(String.valueOf(AlumInF));
+                }else{
+                    AlumInM++;
+                    AlumTotales++;
+                    jTFInforMasculinos.setText(String.valueOf(AlumInM));
+                    jSTotal.setValue(AlumTotales);
+                }
+                
+            }
+            
+            jTFApellido.setText("");
+            jTFNombre.setText("");
+            jTFTelefono.setText("");
+            jSpEdad.setValue(18);
+            jCBsexo.setSelectedIndex(0);
+            
+            jTFApellido.setEnabled(false);
+            jTFNombre.setEnabled(false);
+            jTFTelefono.setEnabled(false);
+            jSpEdad.setEnabled(false);
+            jCBsexo.setEnabled(false);
+
+            jRBEnfermeria.setSelected(false);
+            jRBFisioterapia.setSelected(false);
+            jRBInformatica.setSelected(false);
+            jRBNutricion.setSelected(false);
         }
     }//GEN-LAST:event_jBInscribirMouseClicked
 
@@ -745,12 +825,25 @@ public class FormularioFinal extends javax.swing.JDialog {
         });
     }
     
+    private boolean enfermeria=false;
+    private boolean nutricion=false;
+    private boolean fisioTerapia=false;
+    private boolean informatica=false;
+    private DefaultListModel modelo = new DefaultListModel();
+    private DefaultListModel modelo2 = new DefaultListModel();
+    
     private String nombre;
     private String apellido;
     private String telefono;
     private int edad;
     private String sexo;
     private String aux;
+    
+    private int AlumEnF=0, AlumEnM=0;
+    private int AlumNuF=0, AlumNuM=0;
+    private int AlumFiF=0, AlumFiM=0;
+    private int AlumInF=0, AlumInM=0;
+    private int AlumTotales=0;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
