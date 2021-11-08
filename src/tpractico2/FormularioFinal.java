@@ -5,6 +5,8 @@
  */
 package tpractico2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Copito
@@ -215,6 +217,11 @@ public class FormularioFinal extends javax.swing.JDialog {
 
         jBInscribir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBInscribir.setText("Inscribir Alumno");
+        jBInscribir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBInscribirMouseClicked(evt);
+            }
+        });
 
         jBLimpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar datos de Matriculación");
@@ -228,7 +235,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jCBAlumnosEnEnfermeria.setBackground(new java.awt.Color(240, 240, 240));
         jCBAlumnosEnEnfermeria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jCBAlumnosEnEnfermeria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jCBAlumnosEnEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        jCBAlumnosEnEnfermeria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumnos de Enfermeria", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         jCBAlumnosEnFisioterapia.setBackground(new java.awt.Color(240, 240, 240));
         jCBAlumnosEnFisioterapia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -245,7 +252,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jSPNutricion.setViewportView(jLiNutricion);
 
         jLiInformatica.setBackground(new java.awt.Color(255, 255, 255));
-        jLiInformatica.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Alumnos de Nutrición", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
+        jLiInformatica.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Alumnos de Informatica", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
         jLiInformatica.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -450,7 +457,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(91, 91, 91)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPCantidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -472,20 +479,27 @@ public class FormularioFinal extends javax.swing.JDialog {
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBLimpiar))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addComponent(jPCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 7, Short.MAX_VALUE))
-                    .addComponent(jPRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jVaciar)
+                                .addGap(0, 1, Short.MAX_VALUE))
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addComponent(jBInscribir)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBInscribir)
-                    .addComponent(jBLimpiar)
-                    .addComponent(jVaciar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jPDetalleInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(jPCantidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(jSTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -496,11 +510,13 @@ public class FormularioFinal extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -597,6 +613,96 @@ public class FormularioFinal extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNombreFocusGained
 
+    private void jBInscribirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBInscribirMouseClicked
+        // TODO add your handling code here:
+        nombre=jTFNombre.getText();
+        apellido=jTFApellido.getText();
+        telefono=jTFTelefono.getText();
+        edad=(int) jSpEdad.getValue();
+        sexo=jCBsexo.getSelectedItem().toString();
+        
+        if(nombre.isEmpty()){
+            JOptionPane.showMessageDialog(this,"El campo NOMBRE no puede quedar vacio","Error!",JOptionPane.ERROR_MESSAGE);
+            
+            jTFApellido.setText("");
+            jTFNombre.setText("");
+            jTFTelefono.setText("");
+            jSpEdad.setValue(18);
+            jCBsexo.setSelectedIndex(0);
+
+            jTFApellido.setEnabled(false);
+            jTFNombre.setEnabled(false);
+            jTFTelefono.setEnabled(false);
+            jSpEdad.setEnabled(false);
+            jCBsexo.setEnabled(false);
+
+            jRBEnfermeria.setSelected(false);
+            jRBFisioterapia.setSelected(false);
+            jRBInformatica.setSelected(false);
+            jRBNutricion.setSelected(false);
+            
+        }else if(apellido.isEmpty()){
+            JOptionPane.showMessageDialog(this,"El campo APELLIDO no puede quedar vacio","Error!",JOptionPane.ERROR_MESSAGE);
+            
+            jTFApellido.setText("");
+            jTFNombre.setText("");
+            jTFTelefono.setText("");
+            jSpEdad.setValue(18);
+            jCBsexo.setSelectedIndex(0);
+            
+            jTFApellido.setEnabled(false);
+            jTFNombre.setEnabled(false);
+            jTFTelefono.setEnabled(false);
+            jSpEdad.setEnabled(false);
+            jCBsexo.setEnabled(false);
+
+            jRBEnfermeria.setSelected(false);
+            jRBFisioterapia.setSelected(false);
+            jRBInformatica.setSelected(false);
+            jRBNutricion.setSelected(false);
+        }else if(edad<=18){
+            JOptionPane.showMessageDialog(this,"La edad no puede ser menor a 18","Error!",JOptionPane.ERROR_MESSAGE);
+            
+            jTFApellido.setText("");
+            jTFNombre.setText("");
+            jTFTelefono.setText("");
+            jSpEdad.setValue(18);
+            jCBsexo.setSelectedIndex(0);
+            
+            jTFApellido.setEnabled(false);
+            jTFNombre.setEnabled(false);
+            jTFTelefono.setEnabled(false);
+            jSpEdad.setEnabled(false);
+            jCBsexo.setEnabled(false);
+
+            jRBEnfermeria.setSelected(false);
+            jRBFisioterapia.setSelected(false);
+            jRBInformatica.setSelected(false);
+            jRBNutricion.setSelected(false);
+        }else if(sexo.equals("Seleccione...")){
+            JOptionPane.showMessageDialog(this,"No ha seleccionado sexo","Error!",JOptionPane.ERROR_MESSAGE);
+            
+            jTFApellido.setText("");
+            jTFNombre.setText("");
+            jTFTelefono.setText("");
+            jSpEdad.setValue(18);
+            jCBsexo.setSelectedIndex(0);
+            
+            jTFApellido.setEnabled(false);
+            jTFNombre.setEnabled(false);
+            jTFTelefono.setEnabled(false);
+            jSpEdad.setEnabled(false);
+            jCBsexo.setEnabled(false);
+
+            jRBEnfermeria.setSelected(false);
+            jRBFisioterapia.setSelected(false);
+            jRBInformatica.setSelected(false);
+            jRBNutricion.setSelected(false);
+        }else{
+            aux=nombre+" "+apellido+telefono+" "+edad+" "+sexo;
+        }
+    }//GEN-LAST:event_jBInscribirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -638,6 +744,13 @@ public class FormularioFinal extends javax.swing.JDialog {
             }
         });
     }
+    
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private int edad;
+    private String sexo;
+    private String aux;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
