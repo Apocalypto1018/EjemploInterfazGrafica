@@ -226,9 +226,19 @@ public class FormularioFinal extends javax.swing.JDialog {
 
         jBLimpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar datos de Matriculación");
+        jBLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBLimpiarMouseClicked(evt);
+            }
+        });
 
         jVaciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jVaciar.setText("Vaciar Detalle de Inscripción");
+        jVaciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jVaciarMouseClicked(evt);
+            }
+        });
 
         jPDetalleInscripcion.setBackground(new java.awt.Color(240, 240, 240));
         jPDetalleInscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Detalle de Inscipción", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
@@ -435,6 +445,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jSTotal.setMinorTickSpacing(2);
         jSTotal.setPaintLabels(true);
         jSTotal.setPaintTicks(true);
+        jSTotal.setValue(0);
         jSTotal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Total de alumnos Inscriptos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(100, 100, 100))); // NOI18N
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
@@ -713,11 +724,12 @@ public class FormularioFinal extends javax.swing.JDialog {
                 if(sexo.equals("F")){
                     AlumEnF++;
                     AlumTotales++;
-                    jTFEnferFemeninos.setText(String.valueOf(AlumEnF));
+                    jTFEnferFemeninos.setText(String.valueOf(AlumEnF)); 
+    
                 }else{
                     AlumEnM++;
                     AlumTotales++;
-                    jTFEnferMasculinos.setText(String.valueOf(AlumEnM));
+                    jTFEnferMasculinos.setText(String.valueOf(AlumEnM));      
                 }
   
             }else if(fisioTerapia){
@@ -759,7 +771,7 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumInM++;
                     AlumTotales++;
                     jTFInforMasculinos.setText(String.valueOf(AlumInM));
-                    jSTotal.setValue(AlumTotales);
+                   
                 }
                 
             }
@@ -782,6 +794,71 @@ public class FormularioFinal extends javax.swing.JDialog {
             jRBNutricion.setSelected(false);
         }
     }//GEN-LAST:event_jBInscribirMouseClicked
+
+    private void jBLimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBLimpiarMouseClicked
+        // TODO add your handling code here:
+        jTFApellido.setText("");
+        jTFNombre.setText("");
+        jTFTelefono.setText("");
+        jSpEdad.setValue(18);
+        jCBsexo.setSelectedIndex(0);
+        
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(false);
+        
+        jTFApellido.setEnabled(false);
+        jTFNombre.setEnabled(false);
+        jTFTelefono.setEnabled(false);
+        jSpEdad.setEnabled(false);
+        jCBsexo.setEnabled(false);
+    }//GEN-LAST:event_jBLimpiarMouseClicked
+
+    private void jVaciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVaciarMouseClicked
+        // TODO add your handling code here:
+        jCBAlumnosEnEnfermeria.removeAllItems();
+        jCBAlumnosEnFisioterapia.removeAllItems();
+        
+        modelo.clear();
+        modelo2.clear();
+        
+        AlumEnF=0;
+        AlumEnM=0;
+        AlumNuF=0;
+        AlumNuM=0;
+        AlumFiF=0;
+        AlumFiM=0;
+        AlumInF=0;
+        AlumInM=0;
+        AlumTotales=0;
+        
+        jTFEnferFemeninos.setText(String.valueOf(AlumEnF));
+        jTFEnferMasculinos.setText(String.valueOf(AlumEnM));
+        jTFFisioFemeninos.setText(String.valueOf(AlumFiF));
+        jTFFisioMasculinos.setText(String.valueOf(AlumFiM));
+        jTFNutriFemeninos.setText(String.valueOf(AlumNuF));
+        jTFNutriMasculinos.setText(String.valueOf(AlumNuM));
+        jTFInforMasculinos.setText(String.valueOf(AlumInM));
+        jTFInforMasculinos.setText(String.valueOf(AlumInM));
+        
+        jTFApellido.setText("");
+        jTFNombre.setText("");
+        jTFTelefono.setText("");
+        jSpEdad.setValue(18);
+        jCBsexo.setSelectedIndex(0);
+        
+        jRBEnfermeria.setSelected(false);
+        jRBFisioterapia.setSelected(false);
+        jRBInformatica.setSelected(false);
+        jRBNutricion.setSelected(false);
+        
+        jTFApellido.setEnabled(false);
+        jTFNombre.setEnabled(false);
+        jTFTelefono.setEnabled(false);
+        jSpEdad.setEnabled(false);
+        jCBsexo.setEnabled(false);
+    }//GEN-LAST:event_jVaciarMouseClicked
 
     /**
      * @param args the command line arguments
