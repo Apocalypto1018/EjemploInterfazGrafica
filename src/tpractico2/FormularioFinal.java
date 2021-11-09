@@ -725,11 +725,14 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumEnF++;
                     AlumTotales++;
                     jTFEnferFemeninos.setText(String.valueOf(AlumEnF)); 
-    
+                    
+                    jSTotal.setValue(AlumTotales);   
                 }else{
                     AlumEnM++;
                     AlumTotales++;
-                    jTFEnferMasculinos.setText(String.valueOf(AlumEnM));      
+                    jTFEnferMasculinos.setText(String.valueOf(AlumEnM)); 
+                    
+                    jSTotal.setValue(AlumTotales);  
                 }
   
             }else if(fisioTerapia){
@@ -739,10 +742,14 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumFiF++;
                     AlumTotales++;
                     jTFFisioFemeninos.setText(String.valueOf(AlumFiF));
+                    
+                    jSTotal.setValue(AlumTotales);  
                 }else{
                     AlumFiM++;
                     AlumTotales++;
                     jTFFisioMasculinos.setText(String.valueOf(AlumFiM));
+                    
+                    jSTotal.setValue(AlumTotales);  
                 }
                 
             }else if(nutricion){
@@ -753,10 +760,14 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumNuF++;
                     AlumTotales++;
                     jTFNutriFemeninos.setText(String.valueOf(AlumNuF));
+                    
+                    jSTotal.setValue(AlumTotales);  
                 }else{
                     AlumNuM++;
                     AlumTotales++;
                     jTFNutriMasculinos.setText(String.valueOf(AlumNuM));
+                    
+                    jSTotal.setValue(AlumTotales);  
                 }
                 
             }else if(informatica){
@@ -767,10 +778,14 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumInF++;
                     AlumTotales++;
                     jTFInforFemeninos.setText(String.valueOf(AlumInF));
+                    
+                    jSTotal.setValue(AlumTotales);   
                 }else{
                     AlumInM++;
                     AlumTotales++;
                     jTFInforMasculinos.setText(String.valueOf(AlumInM));
+                    jSTotal.setValue(AlumTotales); 
+                    
                     jSTotal.setValue(AlumTotales);                   
                 }
                 
@@ -833,6 +848,8 @@ public class FormularioFinal extends javax.swing.JDialog {
         AlumInM=0;
         AlumTotales=0;
         
+        jSTotal.setValue(0);  
+        
         jTFEnferFemeninos.setText(String.valueOf(AlumEnF));
         jTFEnferMasculinos.setText(String.valueOf(AlumEnM));
         jTFFisioFemeninos.setText(String.valueOf(AlumFiF));
@@ -840,7 +857,7 @@ public class FormularioFinal extends javax.swing.JDialog {
         jTFNutriFemeninos.setText(String.valueOf(AlumNuF));
         jTFNutriMasculinos.setText(String.valueOf(AlumNuM));
         jTFInforMasculinos.setText(String.valueOf(AlumInM));
-        jTFInforMasculinos.setText(String.valueOf(AlumInM));
+        jTFInforFemeninos.setText(String.valueOf(AlumInF));
         
         jTFApellido.setText("");
         jTFNombre.setText("");
