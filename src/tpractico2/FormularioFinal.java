@@ -771,7 +771,7 @@ public class FormularioFinal extends javax.swing.JDialog {
                     AlumInM++;
                     AlumTotales++;
                     jTFInforMasculinos.setText(String.valueOf(AlumInM));
-                   
+                    jSTotal.setValue(AlumTotales);                   
                 }
                 
             }
